@@ -1,11 +1,10 @@
 const puzzleContainer = document.getElementById('puzzle-container');
 const puzzleSize = 4; // 4x4 puzzle
 let pieces = [];
-let positions = [];
 
 // Create puzzle pieces
 function createPuzzle() {
-    const https://ibb.co/1r6S3TX = 'https://via.placeholder.com/400'; // Replace with your image URL
+    const imageUrl = 'https://i.ibb.co/1r6S3TX/your-image.jpg'; // Replace with your image URL
     let index = 0;
     for (let y = 0; y < puzzleSize; y++) {
         for (let x = 0; x < puzzleSize; x++) {
@@ -13,11 +12,10 @@ function createPuzzle() {
             piece.className = 'puzzle-piece';
             piece.style.backgroundImage = `url(${imageUrl})`;
             piece.style.backgroundPosition = `-${x * 100}px -${y * 100}px`;
-            piece.style.backgroundPosition = `-${x * 100}px -${y * 100}px`;
-            piece.draggable = true;
             piece.dataset.index = index;
             piece.dataset.x = x;
             piece.dataset.y = y;
+            piece.draggable = true;
             piece.addEventListener('dragstart', dragStart);
             piece.addEventListener('dragover', dragOver);
             piece.addEventListener('drop', drop);
@@ -37,8 +35,6 @@ function shufflePieces() {
         const j = Math.floor(Math.random() * (i + 1));
         [pieces[i].dataset.x, pieces[j].dataset.x] = [pieces[j].dataset.x, pieces[i].dataset.x];
         [pieces[i].dataset.y, pieces[j].dataset.y] = [pieces[j].dataset.y, pieces[i].dataset.y];
-        positions[i] = [pieces[i].dataset.x, pieces[i].dataset.y];
-        positions[j] = [pieces[j].dataset.x, pieces[j].dataset.y];
         puzzleContainer.appendChild(pieces[i]);
     }
 }
