@@ -5,7 +5,7 @@ let positions = [];
 
 // Create puzzle pieces
 function createPuzzle() {
-    const imageUrl = 'https://via.placeholder.com/400'; // Replace with your image URL
+    const https://ibb.co/1r6S3TX = 'https://via.placeholder.com/400'; // Replace with your image URL
     let index = 0;
     for (let y = 0; y < puzzleSize; y++) {
         for (let x = 0; x < puzzleSize; x++) {
