@@ -1,17 +1,19 @@
-const canvas = document.getElementById("gameCanvas");
-const ctx = canvas.getContext("2d");
-const gridSize = 15;
-const cellSize = canvas.width / gridSize;
-const board = Array(gridSize).fill(null).map(() => Array(gridSize).fill(null));
-let currentPlayer = 'black';
-const directions = [
-    { x: 1, y: 0 },
-    { x: 0, y: 1 },
-    { x: 1, y: 1 },
-    { x: 1, y: -1 }
-];
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拼圖遊戲</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>拼圖遊戲</h1>
+    <div id="puzzle-container"></div>
+    <button onclick="checkPuzzle()">檢查是否完成</button>
+    <script src="script.js"></script>
+</body>
+</html>
 
-function drawBoard() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     for (let i = 0; i <= gridSize; i++) {
         ctx.beginPath();
